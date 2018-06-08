@@ -30,7 +30,7 @@ app.use(morgan('combined', {
 }));
 
 // TODO: Add helmet
-//Helmet added
+// Helmet added
 app.use(helmet());
 
 // Body Parse middleware

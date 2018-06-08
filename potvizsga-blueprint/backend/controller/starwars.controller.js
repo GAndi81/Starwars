@@ -4,13 +4,13 @@ mongoose.Promise = require('bluebird');
 
 module.exports = {
 
-  //list all data
+  // list all data
   list: (req, res) => {
     Starwars.find({})
       .then(starwars => res.json(starwars))
       .catch(err => res.send(err));
   },
-  //findOne
+  // findOne
   find: (req, res) => {
     Starwars.findById(req.params.id)
       .then(starwars => res.json(starwars))
@@ -28,7 +28,8 @@ module.exports = {
   },
   // update by id
   update: (req, res) => {
-    Starwars.findByIdAndUpdate(req.params.id, req.body)
+    Starwars.findByIdAndUpdate(req.params.id, req.body);
+    console.log(req.body)
       .then(starwars => res.json(starwars))
       .catch(err => res.send(err));
   },
