@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-left">
+      <div class="table">
+        <table class="table table-hover table-sm table-bordered text-center table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Object ID</th>
+              <th>Consumables</th>
+              <th>Denomination</th>
+              <th>Cargo capacity</th>
+              <th>Passengers</th>
+              <th>Max_atmosphering_speed</th>
+              <th>Crew</th>
+              <th>Lengthiness</th>
+              <th>Model</th>
+              <th>Cost in credits</th>
+              <th>Manufacturer</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            </tr>
+            <tr *ngFor="let starwars of starwarses">
+              <td>{{starwars.id}}</td>
+              <td>{{starwars._id}}</td>
+              <td>{{starwars.consumables}}</td>
+              <td>{{starwars.denomination}}</td>
+              <td>{{starwars.cargo_capacity}}</td>
+              <td>{{starwars.passengers}}</td>
+              <td>{{starwars.max_atmosphering_speed}}</td>
+              <td>{{starwars.crew}}</td>
+              <td>{{starwars.lengthiness}}</td>
+              <td>{{starwars.model}}</td>
+              <td>{{starwars.cost_in_credits}}</td>
+              <td>{{starwars.manufacturer}}</td>
+              <td>{{starwars.image}}</td>
+
+              <td>
+                <tr></tr>
+                <div class="btn-group btn-block">
+                  <button type="button" (click)="delete(starwars._id)" class="btn btn-info">Delete</button>
+                </div>
+              </td>
+            </tr>
+
+            <td>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                Creation & Change Starwars Data
+              </button>
+            </td>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create & Update Starwars Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <tr>
+                      <td>
+                        <label for="id">ID</label>
+                        <input type="text" name="id" id="id" [(ngModel)]="starwars.id" class="form-control" />
+
+                        <label for="id">Object ID</label>
+                        <input type="text" name="_id" id="_id" [(ngModel)]="starwars._id" class="form-control" />
+
+                        <label for="consumables">Consumables</label>
+                        <input type="text" name="consumables" id="consumables" [(ngModel)]="starwars.consumables" class="form-control" />
+
+                        <label for="denomination">Denomination</label>
+                        <input type="text" name="denomination" id="denomination" [(ngModel)]="starwars.denomination" class="form-control" />
+
+                        <label for="cargo_capacity">Cargo capacity</label>
+                        <input type="text" name="cargo_capacity" id="cargo_capacity" [(ngModel)]="starwars.cargo_capacity" class="form-control" />
+
+                        <label for="passengers">Passengers</label>
+                        <input type="text" name="passengers" id="passengers" [(ngModel)]="starwars.passengers" class="form-control" />
+
+                        <label for="max_atmosphering_speed">Max_atmosphering_speed</label>
+                        <input type="text" name="max_atmosphering_speed" id="max_atmosphering_speed" [(ngModel)]="starwars.max_atmosphering_speed"
+                          class="form-control" />
+
+                        <label for="crew">Crew</label>
+                        <input type="text" name="crew" id="crew" [(ngModel)]="starwars.crew" class="form-control" />
+
+                        <label for="lengthiness">Lengthiness</label>
+                        <input type="text" name="lengthiness" id="lengthiness" [(ngModel)]="starwars.lengthiness" class="form-control" />
+
+                        <label for="model">Model</label>
+                        <input type="text" name="model" id="model" [(ngModel)]="starwars.model" class="form-control" />
+
+                        <label for="cost_in_credits">Cost in credits</label>
+                        <input type="text" name="cost_in_credits" id="cost_in_credits" [(ngModel)]="starwars.cost_in_credits" class="form-control"
+                        />
+
+                        <label for="manufacturer">Manufacturer</label>
+                        <input type="text" name="manufacturer" id="manufacturer" [(ngModel)]="starwars.manufacturer" class="form-control" />
+
+                        <label for="image">Image</label>
+                        <input type="text" name="image" id="image" [(ngModel)]="starwars.image" class="form-control" />
+
+                    </tr>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button (click)="save(starwars)" type="button" class="btn btn-info">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div>

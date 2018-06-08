@@ -1,0 +1,11 @@
+thead:hover {
+  cursor: pointer;
+}
+
+thead {
+  text-align: center;
+}
+
+table {
+  border-radius: 15px;
+}
