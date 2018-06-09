@@ -28,8 +28,8 @@ module.exports = {
   },
   // update by id
   update: (req, res) => {
-    Starwars.findByIdAndUpdate(req.params.id, req.body);
-    console.log(req.body)
+    console.log(req.body);
+    Starwars.findByIdAndUpdate(req.params.id, req.body)
       .then(starwars => res.json(starwars))
       .catch(err => res.send(err));
   },
