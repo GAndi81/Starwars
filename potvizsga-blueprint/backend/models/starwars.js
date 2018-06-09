@@ -7,7 +7,7 @@ const StarwarsSchema = mongoose.Schema({
     unique: true,
   },
   consumables: {
-    type: String
+    type: String,
   },
   denomination: {
     type: String,
@@ -42,7 +42,7 @@ const StarwarsSchema = mongoose.Schema({
   },
   image: {
     type: String,
-  }
+  },
 });
 
 module.exports = mongoose.model('Starwars', StarwarsSchema);

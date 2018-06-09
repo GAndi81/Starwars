@@ -4,6 +4,11 @@ export class Starwars {
         required: true,
         unique: true,
     };
+    _id: {
+        type: String,
+        required: true,
+        unique: true,
+    };
     consumables: {
         type: String
     };
