@@ -18,6 +18,7 @@ module.exports = {
   },
   // create new data
   create: (req, res) => {
+    console.log(req.body);
     Starwars.create(req.body, (err, post) => {
       if (err) {
         res.send(err);
