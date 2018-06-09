@@ -19,8 +19,8 @@ export class StarwarsService {
   }
 
   save(starwars: Starwars): Observable<Starwars> {
-    if (starwars.id) {
-      return this.httpClient.put<Starwars>(this.url + starwars.id, starwars);
+    if (starwars._id) {
+      return this.httpClient.put<Starwars>(this.url + starwars._id, starwars);
     } else {
       return this.httpClient.post<Starwars>(this.url, starwars);
     }

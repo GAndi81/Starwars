@@ -32,7 +32,9 @@ module.exports = {
     console.log(req.body);
     Starwars.findByIdAndUpdate(req.params.id, req.body)
       .then(starwars => res.json(starwars))
-      .catch(err => res.send(err));
+      .catch((err) => {
+        res.status(404).send(err);
+      });
   },
   // remove by id
   remove: (req, res) => {
